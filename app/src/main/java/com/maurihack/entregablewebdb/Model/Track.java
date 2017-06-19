@@ -5,10 +5,11 @@ package com.maurihack.entregablewebdb.Model;
  */
 
 public class Track {
-    /**
-     * Created by elnia on 6/19/2017.
-     */
 
-    public static class TrackContainer {
-    }
+    private String title;
+    private Integer trackId;
+    private Integer albumId;
+    private String imageURL;
+
+
 }
