@@ -1,11 +1,9 @@
 package com.maurihack.entregablewebdb.Views;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.maurihack.entregablewebdb.Controllers.Controller;
 import com.maurihack.entregablewebdb.Model.Track;
@@ -27,7 +25,7 @@ public class MainActivity extends Activity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         recyclerView.setAdapter(adapter);
 
-        Controller controller = new Controller();
+        Controller controller = new TrackController();
         controller.getTracks(new ResultListener<List<Track>>() {
             @Override
             public void finish(List<Track> resultado) {

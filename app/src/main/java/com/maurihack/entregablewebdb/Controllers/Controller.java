@@ -17,17 +17,17 @@ public class Controller {
 
     private Context context;
 
-    public PersonController(Context context) {
+    public Controller(Context context) {
         this.context = context;
     }
 
 
-    public void obtenerListaDePersonas(final ResultListener<List<Person>> resultListenerFromView) {
+    public void getTrackList(final ResultListener<List<Track>> resultListenerFromView) {
 
 
         if(HTTPConnectionManager.isNetworkingOnline(context)) {
-            DAOTracksInternet daoPersonasInternet = new DAOTracksInternet();
-            daoPersonasInternet.getTracksFromWeb(new ResultListener<List<Track>>() {
+            DAOTracksInternet daoTracksInternet = new DAOTracksInternet();
+            daoTracksInternet.getTracksFromWeb(new ResultListener<List<Track>>() {
                 @Override
                 public void finish(List<Track> tracks) {
 
