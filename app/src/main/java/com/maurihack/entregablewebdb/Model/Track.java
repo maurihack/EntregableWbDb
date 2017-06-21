@@ -2,23 +2,24 @@ package com.maurihack.entregablewebdb.Model;
 
 
 import com.google.gson.annotations.SerializedName;
+import com.maurihack.entregablewebdb.DAOs.DAOTrackDatabase;
 
 public class Track {
 
-    @SerializedName("title")
+    @SerializedName(DAOTrackDatabase.TITLE)
     private String title;
 
-    @SerializedName("id")
+    @SerializedName(DAOTrackDatabase.TRACK_ID)
     private Integer trackId;
 
-    @SerializedName("albumId")
+    @SerializedName(DAOTrackDatabase.ALBUM_ID)
     private Integer albumId;
 
-    @SerializedName("url")
-    private String imageBig;
+    @SerializedName(DAOTrackDatabase.IMAGE_MAIN)
+    private String imageMain;
 
-    @SerializedName("thumbnailUrl")
-    private String imageSmall ;
+    @SerializedName(DAOTrackDatabase.THUMBNAIL)
+    private String thumbnail;
 
 
     public Track() {
@@ -48,19 +49,19 @@ public class Track {
         this.albumId = albumId;
     }
 
-    public String getImageBig() {
-        return imageBig;
+    public String getImageMain() {
+        return imageMain;
     }
 
-    public void setImageBig(String imageBig) {
-        this.imageBig = imageBig;
+    public void setImageMain(String imageMain) {
+        this.imageMain = imageMain;
     }
 
-    public String getImageSmall() {
-        return imageSmall;
+    public String getThumbnail() {
+        return thumbnail;
     }
 
-    public void setImageSmall(String imageSmall) {
-        this.imageSmall = imageSmall;
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 }

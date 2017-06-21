@@ -31,21 +31,21 @@ public class Controller {
                 @Override
                 public void finish(List<Track> tracks) {
 
-                    //GUARDO EN LA BASE DE DATOS LA LISTA QUE TRAJE DE INTERNET
-                    DAOTrackDatabase daoPersonDatabase = new DAOTrackDatabase(context);
-                    daoPersonDatabase.addPersons(tracks);
+                    //Guardo los datos bajados a la base de datos
+                    DAOTrackDatabase daoTrackDatabase = new DAOTrackDatabase(context);
+                    daoTrackDatabase.addTrackList(tracks);
 
                     resultListenerFromView.finish(tracks);
                 }
             });
-            Toast.makeText(context, "Estoy con internet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Actualizando contenido...", Toast.LENGTH_SHORT).show();
         }
         else {
 
             DAOTrackDatabase daoTrackDatabase = new DAOTrackDatabase(context);
-            List<Track> tracks = daoTrackDatabase.getAllPersons();
+            List<Track> tracks = daoTrackDatabase.getAllTracks();
             resultListenerFromView.finish(tracks);
-            Toast.makeText(context, "Estoy con la base", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Aguardando conección a internet", Toast.LENGTH_SHORT).show();
         }
     }
 
